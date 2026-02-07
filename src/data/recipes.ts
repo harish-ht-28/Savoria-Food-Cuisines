@@ -1,4 +1,5 @@
 import { Recipe, CuisineInfo } from "@/types/recipe";
+import { americanRecipes } from "@/data/american-recipes";
 
 export const cuisines: CuisineInfo[] = [
   { name: "Italian", description: "Rich pasta, creamy risotto, and wood-fired pizza from the heart of the Mediterranean.", flag: "🇮🇹" },
@@ -7,6 +8,7 @@ export const cuisines: CuisineInfo[] = [
   { name: "Mexican", description: "Bold tacos, zesty salsas, and hearty stews from the colorful streets of Mexico.", flag: "🇲🇽" },
   { name: "Thai", description: "Harmonious balance of sweet, sour, salty, and spicy from Southeast Asia.", flag: "🇹🇭" },
   { name: "French", description: "Elegant sauces, artisan breads, and refined techniques from the culinary capital of the world.", flag: "🇫🇷" },
+  { name: "American", description: "Hearty Southern comfort food, bold Cajun flavors, and classic American desserts from coast to coast.", flag: "🇺🇸" },
 ];
 
 export const recipes: Recipe[] = [
@@ -328,4 +330,6 @@ export const recipes: Recipe[] = [
     description: "A traditional Provençal fish stew with a medley of Mediterranean seafood — sea bass, mussels, shrimp — in a saffron-scented tomato broth, served with rouille-topped croutons.",
     nutrition: { calories: 420, carbohydrateContent: "18g", cholesterolContent: "145mg", fiberContent: "3g", proteinContent: "38g", saturatedFatContent: "3g", sodiumContent: "980mg", sugarContent: "6g", fatContent: "18g" },
   },
+  // American (from uploaded US recipes dataset)
+  ...americanRecipes,
 ];
