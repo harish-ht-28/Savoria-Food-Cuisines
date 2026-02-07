@@ -13,7 +13,7 @@ import {
   CollapsibleTrigger,
 } from "@/components/ui/collapsible";
 import { Separator } from "@/components/ui/separator";
-import { Clock, Users, ChevronDown, ChevronUp } from "lucide-react";
+import { Clock, Users, ChevronDown, ChevronUp, ExternalLink } from "lucide-react";
 import {
   Table,
   TableBody,
@@ -59,6 +59,17 @@ const RecipeDrawer = ({ recipe, open, onClose }: RecipeDrawerProps) => {
             </span>
             <StarRating rating={recipe.rating} size={14} />
           </div>
+          {recipe.url && (
+            <a
+              href={recipe.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 text-xs text-primary hover:underline mt-1"
+            >
+              <ExternalLink className="h-3 w-3" />
+              View original recipe
+            </a>
+          )}
         </SheetHeader>
 
         <Separator />
@@ -107,6 +118,48 @@ const RecipeDrawer = ({ recipe, open, onClose }: RecipeDrawerProps) => {
               </div>
             </CollapsibleContent>
           </Collapsible>
+
+          {/* Ingredients */}
+          {recipe.ingredients && recipe.ingredients.length > 0 && (
+            <>
+              <Separator />
+              <div>
+                <h4 className="text-sm font-semibold text-muted-foreground uppercase tracking-wider mb-3">
+                  Ingredients
+                </h4>
+                <ul className="space-y-2">
+                  {recipe.ingredients.map((ingredient, index) => (
+                    <li key={index} className="flex items-start gap-2 text-sm text-foreground">
+                      <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-primary shrink-0" />
+                      <span>{ingredient}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </>
+          )}
+
+          {/* Instructions */}
+          {recipe.instructions && recipe.instructions.length > 0 && (
+            <>
+              <Separator />
+              <div>
+                <h4 className="text-sm font-semibold text-muted-foreground uppercase tracking-wider mb-3">
+                  Instructions
+                </h4>
+                <ol className="space-y-3">
+                  {recipe.instructions.map((step, index) => (
+                    <li key={index} className="flex gap-3 text-sm">
+                      <span className="flex items-center justify-center h-6 w-6 rounded-full bg-primary/10 text-primary font-semibold text-xs shrink-0">
+                        {index + 1}
+                      </span>
+                      <span className="text-foreground leading-relaxed pt-0.5">{step}</span>
+                    </li>
+                  ))}
+                </ol>
+              </div>
+            </>
+          )}
 
           <Separator />
 

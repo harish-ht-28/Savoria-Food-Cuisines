@@ -8,6 +8,7 @@ import cuisineIndian from "@/assets/cuisine-indian.jpg";
 import cuisineMexican from "@/assets/cuisine-mexican.jpg";
 import cuisineThai from "@/assets/cuisine-thai.jpg";
 import cuisineFrench from "@/assets/cuisine-french.jpg";
+import cuisineAmerican from "@/assets/cuisine-american.jpg";
 
 const cuisineImages: Record<string, string> = {
   Italian: cuisineItalian,
@@ -16,6 +17,7 @@ const cuisineImages: Record<string, string> = {
   Mexican: cuisineMexican,
   Thai: cuisineThai,
   French: cuisineFrench,
+  American: cuisineAmerican,
 };
 
 const Cuisines = () => {

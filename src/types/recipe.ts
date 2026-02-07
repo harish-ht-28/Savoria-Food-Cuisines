@@ -22,6 +22,11 @@ export interface Recipe {
   serves: number;
   description: string;
   nutrition: NutritionInfo;
+  ingredients?: string[];
+  instructions?: string[];
+  url?: string;
+  continent?: string;
+  country?: string;
 }
 
 export interface CuisineInfo {
