@@ -57,7 +57,7 @@ const HeroSection = () => {
               asChild
               variant="outline"
               size="lg"
-              className="text-base px-8 h-12 border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground"
+              className="text-base px-8 h-12 border-2 border-primary-foreground/80 text-primary-foreground bg-primary-foreground/10 hover:bg-primary-foreground/25 hover:text-primary-foreground font-semibold backdrop-blur-sm"
             >
               <Link to="/cuisines">
                 Explore Cuisines
